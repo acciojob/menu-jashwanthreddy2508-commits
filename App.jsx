@@ -5,7 +5,7 @@ import Card from './Card'
 function App() {
   const [filter, setFilter] = useState(null)
 
-  const items = [
+  const [items] = useState(() => [
     {
       id: 1,
       name: 'Pizza Margherita',
@@ -70,7 +70,7 @@ function App() {
       price: 5.99,
       image: 'https://images.unsplash.com/photo-1553787499-6f9133860278?auto=format&fit=crop&w=1170&q=80'
     }
-  ]
+  ])
   const visibleItems = filter
     ? items.filter((item) => item.category === filter)
     : items
